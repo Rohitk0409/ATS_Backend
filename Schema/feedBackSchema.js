@@ -22,7 +22,6 @@ const feedbackSchema = new mongoose.Schema(
       type: String,
       required: [true, "Feedback is required"],
       trim: true,
-      minlength: [5, "Feedback must be at least 5 characters"],
     },
   },
   {

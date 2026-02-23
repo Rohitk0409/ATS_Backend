@@ -3,7 +3,7 @@ const Feedback = require("../Schema/feedBackSchema");
 exports.createFeedBack = async (req, res) => {
   try {
     const { name, email, feedback } = req.body;
-
+    console.log(name, email, feedback);
     // Basic manual validation (extra safety)
     if (!email || !feedback) {
       return res.status(400).json({
@@ -24,6 +24,7 @@ exports.createFeedBack = async (req, res) => {
       data: newFeedback,
     });
   } catch (error) {
+    console.log(error);
     return res.status(500).json({
       success: false,
       message: error.message,
